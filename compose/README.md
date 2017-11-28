@@ -1,6 +1,6 @@
 # Kong in Docker Compose
 
-This is the official Docker Compose template for [Kong][kong-site-url].
+This is the official Docker Compose Install template for [Kong][kong-site-url].
 
 # What is Kong?
 
