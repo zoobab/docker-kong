@@ -8,21 +8,14 @@ You can find the official Docker distribution for Kong at [https://store.docker.
 
 # How to use this template
 
-This Docker Compose template provisions a Kong container with a Postgres database, plus a nginx load-balancer and Consul for service discovery. After running the template, the `nginx-lb` load-balancer will be the entrypoint to Kong.
+This Docker Compose template provisions a Kong container with a Postgres database. It is not setup for scaling Kong, just simplifying the initial install.
 
 To run this template execute:
 
 ```shell
 $ docker-compose up
 ```
-
-To scale Kong (ie, to three instances) execute:
-
-```shell
-$ docker-compose scale kong=3
-```
-
-Kong will be available through the `nginx-lb` instance on port `8000`, `8443` and `8001`. You can customize the template with your own environment variables or datastore configuration.
+Kong will be available through the instance on API proxy ports `8000`, `8443` (ssl) and API admin ports `8001`, `8444` (ssl). You can customize the template with your own environment variables or datastore configuration.
 
 Kong's documentation can be found at [getkong.org/docs][kong-docs-url].
 
