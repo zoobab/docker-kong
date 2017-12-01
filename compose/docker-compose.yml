@@ -34,6 +34,10 @@ services:
             environment:
                 - KONG_DATABASE=postgres
                 - KONG_PG_HOST=kong-database
+                - KONG_PROXY_ACCESS_LOG=/dev/stdout
+                - KONG_ADMIN_ACCESS_LOG=/dev/stdout
+                - KONG_PROXY_ERROR_LOG=/dev/stderr
+                - KONG_ADMIN_ERROR_LOG=/dev/stderr
             healthcheck:
                 test: ["CMD-SHELL", "curl -I -s -L http://127.0.0.1:8000 || exit 1"]
                 interval: 30s
