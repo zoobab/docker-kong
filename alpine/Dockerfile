@@ -1,8 +1,8 @@
 FROM alpine:3.6
 LABEL maintainer="Kong Core Team <team-core@konghq.com>"
 
-ENV KONG_VERSION 1.1.1
-ENV KONG_SHA256 3f07c30c6902ec0dd17e9777f5f479076c65c634b677402072414ca9d31dc810
+ENV KONG_VERSION 1.2.0
+ENV KONG_SHA256 049c63c930b14d8049ebd028794b690b52600c580be8fe129dac11062b8e2568
 
 RUN adduser -Su 1337 kong \
 	&& mkdir -p "/usr/local/kong" \
@@ -26,6 +26,6 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 8000 8443 8001 8444
 
-STOPSIGNAL SIGTERM
+STOPSIGNAL SIGQUIT
 
 CMD ["kong", "docker-start"]

@@ -1,7 +1,7 @@
 FROM centos:7
 LABEL maintainer="Kong Core Team <team-core@konghq.com>"
 
-ENV KONG_VERSION 1.1.1
+ENV KONG_VERSION 1.2.0
 
 ARG SU_EXEC_VERSION=0.2
 ARG SU_EXEC_URL="https://github.com/ncopa/su-exec/archive/v${SU_EXEC_VERSION}.tar.gz"
@@ -28,6 +28,6 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 8000 8443 8001 8444
 
-STOPSIGNAL SIGTERM
+STOPSIGNAL SIGQUIT
 
 CMD ["kong", "docker-start"]
